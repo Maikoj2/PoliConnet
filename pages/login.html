@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Boilerplate</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <main>
+        <div class="wrapper">
+
+            <span class="rotate-bg"></span>
+            <span class="rotate-bg2"></span>
+            
+            <!-- login section -->
+            <div class="form-box login">
+
+                <h2 class="title animation" style="--i:0; --j:21">Login</h2>
+
+                <form action="#">
+
+                    <div class="input-box animation" style="--i:1; --j:22">
+                        <input type="text" name="username" id="login-username" required>
+                        <label for="login-username">Username</label>
+                        <i class='bx bxs-user'></i>
+                    </div>
+
+                    <div class="input-box animation" style="--i:2; --j:23">
+                        <input type="password" name="password" id="login-password" required>
+                        <label for="login-password">Password</label>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+
+                    <button type="submit" class="btn animation" style="--i:3; --j:24">Login</button>
+                    <div class="linkTxt animation" style="--i:5; --j:25">
+                        <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="info-text login">
+                <h3 class="animation" style="--i:1; --j:21; padding: auto;">Bienvenidos a </h3>
+                <img src="../images/PNG/poli_connect_horizontal_256px.png"
+                 alt="Welcome to Poli Connect" class="animation" style="--i:2; --j:22;">
+            </div>
+
+
+
+
+
+
+            <!-- registration section -->
+            <div class="form-box register">
+
+                <h2 class="title animation" style="--i:17; --j:0">Sign Up</h2>
+
+                <form action="#">
+
+                    <div class="input-box animation" style="--i:18; --j:1">
+                        <input type="text" name="username" id="register-username" required>
+                        <label for="register-username">Username</label>
+                        <i class='bx bxs-user'></i>
+                    </div>
+
+                    <div class="input-box animation" style="--i:19; --j:2">
+                        <input type="email" name="email" id="register-email" required>
+                        <label for="register-email">Email</label>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+
+                    <div class="input-box animation" style="--i:20; --j:3">
+                        <input type="password" name="password" id="register-password" required>
+                        <label for="register-password">Password</label>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+
+                    <button type="submit" class="btn animation" style="--i:21;--j:4">Sign Up</button>
+
+                    <div class="linkTxt animation" style="--i:22; --j:5">
+                        <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <div class="info-text register">
+                <img src="../images/PNG/poli_connect_isotipo_256px.png" style="--i:17; --j:0;" alt="Welcome to Poli Connect" class="animation" />
+                <p class="animation" style="--i:18; --j:1;">Join us and explore more!</p>
+            </div>
+    </main>
+
+    <footer>
+        <p>© 2023 Your Company. All rights reserved.</p>
+    </footer>
+
+    <script src="../scripts/app.js"></script>
+</body>
+
+</html>
