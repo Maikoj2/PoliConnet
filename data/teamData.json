@@ -1,0 +1,27 @@
+[
+    {
+      "name": "Creador 1",
+      "image": "../images/creators/creador1.jpg",
+      "url": "https://linkedin.com/in/creador1"
+    },
+    {
+      "name": "Creador 2",
+      "image": "../images/creators/creador2.jpg",
+      "url": "https://github.com/creador2"
+    },
+    {
+      "name": "Creador 3",
+      "image": "../images/creators/creador3.jpg",
+      "url": "https://instagram.com/creador3"
+    },
+    {
+      "name": "Creador 3",
+      "image": "../images/creators/creador3.jpg",
+      "url": "https://instagram.com/creador3"
+    },
+    {
+      "name": "Creador 3",
+      "image": "../images/creators/creador3.jpg",
+      "url": "https://instagram.com/creador3"
+    }
+  ]

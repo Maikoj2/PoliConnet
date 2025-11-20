@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Boilerplate</title>
     <link rel="stylesheet" href="../styles/main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -95,7 +96,29 @@
     </main>
 
     <footer>
-        <p>© 2023 Your Company. All rights reserved.</p>
+
+        <div class="footer-links"> 
+            <div class="block-links">
+                <a href="#terms">Términos y condiciones</a>
+                <a href="#privacy">Políticas de privacidad</a>
+                <a href="#about">Sobre nosotros</a>
+            </div>
+            <img src="../images/PNG/poli_connect_horizontal_128px.png"  alt="Stay connected for more exciting updates!" />
+            <div class="block-links">
+                <a href="#help">Ayuda</a> 
+                <a href="#faq">Preguntas frecuentes</a>
+                <a href="#contact">Contacto</a>
+            </div>
+        </div>  
+        <hr class="horizontal dark" /> 
+        <div>
+            <div class="social-icons" id="creators-container">
+                <!-- JS llenará automáticamente las fotos de los creadores desde teamData.json -->
+            </div>
+
+            <p>© 2025 <span style="font-weight: bold;">PoliConnet</span>. All rights reserved.</p>
+
+        </div>
     </footer>
 
     <script src="../scripts/app.js"></script>

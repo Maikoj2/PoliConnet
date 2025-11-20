@@ -138,7 +138,31 @@ function initApp() {
         });
     }
 
+    // Cargar y crear los avatares de creadores desde JSON local
+    fetch('../data/teamData.json')
+        .then(response => response.json())
+        .then(creators => {
+            const container = document.getElementById('creators-container');
+            if (container && Array.isArray(creators) && creators.length > 0) {
+                container.innerHTML = '';
 
+                creators.forEach(creator => {
+                    const link = document.createElement('a');
+                    link.href = creator.url;
+                    link.target = '_blank';
+                    link.setAttribute('aria-label', `Perfil de ${creator.name}`);
+                    link.className = 'social-icon';
+
+                    const img = document.createElement('img');
+                    img.src = creator.image;
+                    img.alt = creator.name;
+
+                    link.appendChild(img);
+                    container.appendChild(link);
+                });
+            }
+        })
+        .catch(error => console.error('Error loading team data:', error));
 
     // Console message
     console.log('Application initialized successfully!');
