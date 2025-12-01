@@ -15,6 +15,7 @@ Una página de inicio de sesión y registro moderna y completamente responsive, 
 ```
 html/
 ├── index.html          # Página principal
+├── data/               # Datos del proyecto
 ├── pages/
 │   └── login.html      # Página de login/registro
 ├── styles/
@@ -76,9 +77,8 @@ Los colores y estilos pueden personalizarse modificando las variables CSS en `st
 
 Este proyecto es de código abierto y está disponible bajo la [MIT License](LICENSE).
 
-## 👤 Autor
+## 👤 Autors
 
-Tu nombre aquí
 
 ---
 

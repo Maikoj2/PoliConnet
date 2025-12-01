@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - PoliConnect</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <main>
+        <div class="wrapper">
+            <div class="form-box contact-form">
+                <h2 class="title">Contáctanos</h2>
+                
+                <form action="#">
+                    <div class="input-box">
+                        <input type="text" name="name" id="contact-name" required>
+                        <label for="contact-name">Nombre Completo</label>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input type="email" name="email" id="contact-email" required>
+                        <label for="contact-email">Correo Electrónico</label>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                    
+                    <div class="input-box">
+                        <input type="text" name="subject" id="contact-subject" required>
+                        <label for="contact-subject">Asunto</label>
+                        <i class='bx bxs-edit-alt'></i>
+                    </div>
+                    
+                    <div class="input-box">
+                        <textarea name="message" id="contact-message" rows="4" required></textarea>
+                        <label for="contact-message">Mensaje</label>
+                        <i class='bx bxs-message-dots'></i>
+                    </div>
+                    
+                    <button type="submit" class="btn">Enviar Mensaje</button>
+                </form>
+            </div>
+            
+            <div class="info-text contact-info">
+                <h3>Información de Contacto</h3>
+                <ul>
+                    <li><i class='bx bx-map'></i> Carrera 1 #12-34, Bogotá, Colombia</li>
+                    <li><i class='bx bx-phone'></i> +57 1 234 5678</li>
+                    <li><i class='bx bx-envelope'></i> contacto@policonnect.edu</li>
+                    <li><i class='bx bx-time-five'></i> Lunes a Viernes: 8:00 AM - 6:00 PM</li>
+                </ul>
+                
+                <div class="social-media">
+                    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Same footer as login.html -->
+        <!-- ... rest of footer remains same ... -->
+    </footer>
+
+    <script src="../scripts/app.js"></script>
+</body>
+</html>

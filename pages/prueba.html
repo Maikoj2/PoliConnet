@@ -1,0 +1,221 @@
+<!-- <!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Mesh Gradient Animado</title>
+<style>
+  :root{
+    --c1: 220 90% 60%;
+    --c2: 330 85% 60%;
+    --c3: 140 70% 55%;
+    --c4: 45 90% 55%;
+    --blur: 60px;
+  }
+
+  html,body{
+    height:100%;
+    margin:0;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+    background:#0b0f14;
+  }
+
+  /* Contenedor fullscreen */
+  .mesh {
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    /* 4 radial gradients that will act as "blobs" (positions controlled by CSS vars) */
+    background:
+      radial-gradient(600px 400px at var(--x1,10%) var(--y1,20%), hsl(var(--c1) / 0.95) 0%, transparent 35%),
+      radial-gradient(500px 350px at var(--x2,80%) var(--y2,30%), hsl(var(--c2) / 0.95) 0%, transparent 35%),
+      radial-gradient(650px 450px at var(--x3,20%) var(--y3,80%), hsl(var(--c3) / 0.95) 0%, transparent 35%),
+      radial-gradient(550px 420px at var(--x4,75%) var(--y4,85%), hsl(var(--c4) / 0.95) 0%, transparent 35%);
+    background-blend-mode: screen;
+    filter: blur(var(--blur));
+    transform: translateZ(0); /* promote to its own layer for smoother animation */
+    transition: filter 400ms linear;
+    will-change: background-position, filter;
+  }
+
+  /* Overlay to darken center and keep content readable */
+  .overlay {
+    position:fixed;
+    inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.35));
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* Demo content */
+  .content{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+    padding:2rem;
+  }
+  h1{ font-size: clamp(1.6rem, 4vw, 3rem); margin:0 0 .5rem;}
+  p{ margin:0; opacity:.85}
+  /* Mejora accesibilidad cuando se reduce movimiento */
+  @media (prefers-reduced-motion: reduce){
+    .mesh { transition: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="mesh" id="mesh"></div>
+  <div class="overlay"></div>
+
+  <main class="content" aria-live="polite">
+    <div>
+      <h1>Mesh gradient animado</h1>
+      <p>Movimiento y colores suaves con CSS + JS — copia, ajusta y experimenta.</p>
+    </div>
+  </main>
+
+<script>
+/* Configuración: puedes cambiar blobs, velocidad y cromas aquí */
+const blobs = [
+  {xVar:'--x1', yVar:'--y1', hueVar:'--c1', baseHue:220, sat:90, light:60, rx:600, ry:400},
+  {xVar:'--x2', yVar:'--y2', hueVar:'--c2', baseHue:330, sat:85, light:60, rx:500, ry:350},
+  {xVar:'--x3', yVar:'--y3', hueVar:'--c3', baseHue:140, sat:70, light:55, rx:650, ry:450},
+  {xVar:'--x4', yVar:'--y4', hueVar:'--c4', baseHue:45,  sat:90, light:55, rx:550, ry:420},
+];
+
+const mesh = document.getElementById('mesh');
+let start = null;
+
+/* Small easing to make motion feel organic */
+function ease(t){ return 0.5 - Math.cos(t * Math.PI) / 2; }
+
+/* Animate positions (percent) and slowly shift hues */
+function frame(ts){
+  if (!start) start = ts;
+  const t = (ts - start) / 1000; // seconds
+
+  // loop through blobs and set CSS variables
+  blobs.forEach((b, i) => {
+    // position movement via sin/cos for smooth orbits
+    const speed = 0.18 + i * 0.03;
+    const px = 50 + Math.sin(t * speed + i * 2.1) * (25 + i*4); // x in %
+    const py = 50 + Math.cos(t * (speed*1.1) + i * 1.7) * (22 + i*3); // y in %
+    mesh.style.setProperty(b.xVar, px.toFixed(2) + '%');
+    mesh.style.setProperty(b.yVar, py.toFixed(2) + '%');
+
+    // hue oscillates slowly +/- 20 degrees
+    const hueShift = Math.sin(t * (0.05 + i*0.01) + i) * 20;
+    const hue = Math.round(b.baseHue + hueShift);
+    mesh.style.setProperty(b.hueVar, `${hue} ${b.sat}% ${b.light}%`);
+  });
+
+  // subtle pulsating blur
+  const blurBase = 55;
+  const blur = blurBase + Math.sin(t * 0.8) * 10;
+  mesh.style.setProperty('--blur', Math.max(30, blur).toFixed(1) + 'px');
+
+  // request next frame (respect prefers-reduced-motion)
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  requestAnimationFrame(frame);
+}
+
+/* Start animation */
+requestAnimationFrame(frame);
+
+/* Optional: change palette on click (demo) */
+document.addEventListener('click', () => {
+  // randomize base hues slightly
+  blobs.forEach(b => { b.baseHue = Math.floor(Math.random()*360); });
+});
+</script>
+</body>
+</html> -> -->
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mesh Gradient Pro</title>
+<style>
+  html,body {
+    margin:0;
+    height:100%;
+    background:#000;
+    overflow:hidden;
+    font-family:sans-serif;
+  }
+  canvas {
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100vh;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="mesh"></canvas>
+
+<script>
+/* ------------------------------------------
+   Mesh Gradient Usando Blobs en Canvas
+------------------------------------------- */
+
+const canvas = document.getElementById("mesh");
+const ctx = canvas.getContext("2d");
+
+let w, h;
+function resize(){
+  w = canvas.width  = window.innerWidth  * 2;
+  h = canvas.height = window.innerHeight * 2;
+}
+resize();
+window.onresize = resize;
+
+/* CONFIG DE LOS BLOBS */
+const blobs = [
+  { x:0.3, y:0.3, r:0.35, hue:260 },
+  { x:0.7, y:0.3, r:0.35, hue:330 },
+  { x:0.4, y:0.7, r:0.40, hue:160 },
+  { x:0.7, y:0.75, r:0.33, hue:40  },
+];
+
+let t = 0;
+
+function draw(){
+  t += 0.003;
+
+  ctx.clearRect(0,0,w,h);
+
+  blobs.forEach((b,i)=>{
+    // movimiento suave tipo nube
+    const ox = Math.sin(t + i*2.1) * 0.05;
+    const oy = Math.cos(t*1.1 + i*1.7) * 0.05;
+
+    const x = (b.x + ox) * w;
+    const y = (b.y + oy) * h;
+    const r = b.r * Math.min(w,h);
+
+    // cambiar ligeramente el tono con el tiempo
+    const hue = b.hue + Math.sin(t + i*5) * 15;
+    const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
+
+    grad.addColorStop(0, `hsla(${hue},90%,65%,0.9)`);
+    grad.addColorStop(1, `hsla(${hue},90%,65%,0)`);
+
+    ctx.globalCompositeOperation = "lighter"; // 🔥 mezcla aditiva
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(x,y,r,0,Math.PI*2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
+</body>
+</html>

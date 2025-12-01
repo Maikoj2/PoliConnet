@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Juan Pérez",
+        "role": "Fundador & CEO",
+        "degree": "Ing. Sistemas",
+        "image": "juan_perez.jpg"
+    },
+    {
+        "name": "María Gómez",
+        "role": "Directora de Desarrollo",
+        "degree": "Ing. Software",
+        "image": "maria_gomez.jpg"
+    },
+    {
+        "name": "Carlos Rodríguez",
+        "role": "Diseñador UX/UI",
+        "degree": "Diseño Gráfico",
+        "image": "carlos_rodriguez.jpg"
+    },
+    {
+        "name": "Laura Martínez",
+        "role": "Marketing Digital",
+        "degree": "Comunicación Social",
+        "image": "laura_martinez.jpg"
+    }
+]

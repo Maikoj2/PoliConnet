@@ -26,7 +26,7 @@ function initApp() {
             );
         });
     }
-        
+
     if (registerLink && wrapper) {
         registerLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -50,34 +50,34 @@ function initApp() {
     if (loginForm) {
         loginForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Método 1: Usando FormData (requiere atributo name en inputs)
             const formData = new FormData(loginForm);
             const data = {};
-            
+
             for (let [key, value] of formData.entries()) {
                 data[key] = value;
             }
-            
+
             // Método 2: Captura directa de inputs (backup si FormData falla)
             if (Object.keys(data).length === 0) {
                 const usernameInput = loginForm.querySelector('input[name="username"]');
                 const passwordInput = loginForm.querySelector('input[name="password"]');
-                
+
                 if (usernameInput && passwordInput) {
                     data.username = usernameInput.value.trim();
                     data.password = passwordInput.value.trim();
                 }
             }
-            
+
             // Validación básica
             if (!data.username || !data.password) {
                 alert('Por favor completa todos los campos');
                 return;
             }
-            
+
             console.log('Login form data:', data);
-            
+
             // Aquí puedes hacer un fetch/AJAX al backend
             // Ejemplo:
             // fetch('/api/login', {
@@ -91,43 +91,43 @@ function initApp() {
     if (registerForm) {
         registerForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             // Método 1: Usando FormData (requiere atributo name en inputs)
             const formData = new FormData(registerForm);
             const data = {};
-            
+
             for (let [key, value] of formData.entries()) {
                 data[key] = value;
             }
-            
+
             // Método 2: Captura directa de inputs (backup si FormData falla)
             if (Object.keys(data).length === 0) {
                 const usernameInput = registerForm.querySelector('input[name="username"]');
                 const emailInput = registerForm.querySelector('input[name="email"]');
                 const passwordInput = registerForm.querySelector('input[name="password"]');
-                
+
                 if (usernameInput && emailInput && passwordInput) {
                     data.username = usernameInput.value.trim();
                     data.email = emailInput.value.trim();
                     data.password = passwordInput.value.trim();
                 }
             }
-            
+
             // Validación básica
             if (!data.username || !data.email || !data.password) {
                 alert('Por favor completa todos los campos');
                 return;
             }
-            
+
             // Validación de email básica
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
                 alert('Por favor ingresa un email válido');
                 return;
             }
-            
+
             console.log('Register form data:', data);
-            
+
             // Aquí puedes hacer un fetch/AJAX al backend
             // Ejemplo:
             // fetch('/api/register', {
@@ -147,6 +147,7 @@ function initApp() {
                 container.innerHTML = '';
 
                 creators.forEach(creator => {
+
                     const link = document.createElement('a');
                     link.href = creator.url;
                     link.target = '_blank';
@@ -156,6 +157,10 @@ function initApp() {
                     const img = document.createElement('img');
                     img.src = creator.image;
                     img.alt = creator.name;
+                    img.onerror = function () {
+                        this.src = '../images/no-img.jpg';
+                        this.onerror = null; // Prevenir loops infinitos
+                    };
 
                     link.appendChild(img);
                     container.appendChild(link);
@@ -164,6 +169,72 @@ function initApp() {
         })
         .catch(error => console.error('Error loading team data:', error));
 
+    // Load team data (this should be in a separate JSON file)
+    fetch('../data/teamContact.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('team-container');
+            if (!container) return;
+
+            data.forEach(member => {
+
+                // Crear el elemento de imagen con manejo de error
+                const img = document.createElement('img');
+                img.src = member.image;
+                img.alt = member.name;
+
+                // Si la imagen no se puede cargar, usar la imagen por defecto
+                img.onerror = function () {
+                    this.src = '../images/no-img.jpg';
+                    this.onerror = null; // Prevenir loops infinitos
+                };
+
+                // Crear el elemento del miembro del equipo
+                const memberDiv = document.createElement('div');
+                memberDiv.className = 'team-member';
+
+                const h3 = document.createElement('h3');
+                h3.textContent = member.name;
+
+                const p = document.createElement('p');
+                p.textContent = member.role || '';
+
+                memberDiv.appendChild(img);
+                memberDiv.appendChild(h3);
+                memberDiv.appendChild(p);
+
+                container.appendChild(memberDiv);
+            });
+        })
+        .catch(error => console.error('Error loading team data:', error));
+ 
+    
+
+
+    // FAQ Accordion - Alternative Implementation
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.toggle-icon');
+
+            // Toggle this item
+            item.classList.toggle('active');
+
+            // Toggle icon
+            icon.style.transform = item.classList.contains('active')
+                ? 'rotate(180deg)'
+                : 'rotate(0deg)';
+
+            // Close others
+            document.querySelectorAll('.faq-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.toggle-icon').style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    });
     // Console message
     console.log('Application initialized successfully!');
 }
