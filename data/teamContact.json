@@ -1,26 +1,32 @@
 [
     {
-        "name": "Juan Pérez",
-        "role": "Fundador & CEO",
-        "degree": "Ing. Sistemas",
-        "image": "juan_perez.jpg"
+        "name": "Jose Miguel Velez",
+        "role": "Futuro Ingeniero en informática",
+        "degree": "Futuro Ingeniero en informática",
+        "image": "../images/team/jose.jpeg"
     },
     {
-        "name": "María Gómez",
-        "role": "Directora de Desarrollo",
-        "degree": "Ing. Software",
-        "image": "maria_gomez.jpg"
+        "name": "Maikol jimenez",
+        "role": "Futuro Ingeniero en informática",
+        "degree": "Futuro Ingeniero en informática",
+        "image": "../images/team/maiik.jpeg"
     },
     {
-        "name": "Carlos Rodríguez",
-        "role": "Diseñador UX/UI",
-        "degree": "Diseño Gráfico",
-        "image": "carlos_rodriguez.jpg"
+        "name": "Angela Pacheco Tovar",
+        "role": "Futuro Ingeniero en informática",
+        "degree": "Futuro Ingeniero en informática",
+        "image": "../images/team/angela.jpeg"
     },
     {
-        "name": "Laura Martínez",
-        "role": "Marketing Digital",
-        "degree": "Comunicación Social",
-        "image": "laura_martinez.jpg"
+        "name": "Rubén Santiago Restrepo García",
+        "role": "Futuro Ingeniero en informática",
+        "degree": "Futuro Ingeniero en informática",
+        "image": "../images/team/ruben.jpeg"
+    },
+    {
+        "name": "Julian Estevan Bedoya Gañan ",
+        "role": "Futuro Ingeniero en informática",
+        "degree": "Futuro Ingeniero en informática",
+        "image": "../images/team/julian.jpeg"
     }
 ]

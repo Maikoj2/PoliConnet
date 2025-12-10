@@ -80,14 +80,33 @@ function initApp() {
             }
 
             console.log('Login form data:', data);
+            alert('Login exitoso');
 
-            // Aquí puedes hacer un fetch/AJAX al backend
-            // Ejemplo:
-            // fetch('/api/login', {
+            window.location.href = '../pages/private/profile.html';
+
+            // fetch('http://localhost:3000/users', {
             //     method: 'POST',
             //     headers: { 'Content-Type': 'application/json' },
             //     body: JSON.stringify(data)
             // })
+            //     .then(response => {
+            //         if (response.ok) {
+            //             alert('Login exitoso');
+            //             // Save simple session
+            //             localStorage.setItem('userSession', JSON.stringify({
+            //                 username: data.username,
+            //                 email: data.email,
+            //                 loggedIn: true
+            //             }));
+            //             window.location.href = '../index.html'; // Redirect to home
+            //         } else {
+            //             alert('Error al iniciar sesión. Asegúrate de que el servidor esté corriendo.');
+            //         }
+            //     })
+            //     .catch(error => {
+            //         console.error('Error:', error);
+            //         alert('No se pudo conectar con el servidor. Ejecuta: npx json-server --watch html/data/users.json');
+            //     });
         });
     }
 
@@ -130,6 +149,9 @@ function initApp() {
             }
 
             console.log('Register form data:', data);
+            alert('Registro exitoso');
+            window.location.href = '../pages/login.html';
+
 
             // Aquí puedes hacer un fetch/AJAX al backend
             // Ejemplo:
@@ -386,7 +408,7 @@ function renderEmprendimientos(dataToRender) {
                     <p>${emprendimiento.descripcion}</p>
                 </div>
                 <div class="emprendimiento-footer">
-                    <a href="${emprendimiento.id === 1 ? '/pages/business.html' : 'javascript:void(0)'}" class="btn-ver-tienda">Ver Tienda</a>
+                    <a href="${emprendimiento.id === 1 ? '/pages/profileBusine.html' : 'javascript:void(0)'}" class="btn-ver-tienda">Ver Tienda</a>
                     <button class="btn-contactar" onclick="openContactModal(${emprendimiento.id})">Contactar</button>
                 </div>
             `;
@@ -412,3 +434,28 @@ function applyFiltersAndSearch(category) {
     renderEmprendimientos(filteredData);
 }
 
+function openContactModal(id) {
+    const emprendimiento = emprendimientos.find(e => e.id === id);
+    if (!emprendimiento) return;
+
+    document.getElementById('modalEmprendimientoNombre').textContent = emprendimiento.nombre;
+    document.getElementById('modalEmprendimientoCategoria').textContent = emprendimiento.categoria;
+    document.getElementById('modalEncargado').textContent = emprendimiento.encargado;
+
+    const telefonoLink = document.getElementById('modalTelefono');
+    telefonoLink.textContent = emprendimiento.telefono;
+    telefonoLink.href = `tel:${emprendimiento.telefono}`;
+
+    const correoLink = document.getElementById('modalCorreo');
+    correoLink.textContent = emprendimiento.correo;
+    correoLink.href = `mailto:${emprendimiento.correo}`;
+
+    document.getElementById('contactModal').classList.add('active');
+}
+
+/**
+ * Cierra el modal de contacto
+ */
+function closeContactModal() {
+    document.getElementById('contactModal').classList.remove('active');
+}
