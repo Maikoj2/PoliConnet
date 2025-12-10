@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Dashboard</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header con degradado -->
+    <header class="profile-header">
+        <div class="header-content">
+            <div class="profile-info">
+                <img src="https://i.pravatar.cc/80?img=12" alt="Alex Thompson" class="profile-avatar">
+                <div>
+                    <h1>Juan Pérez</h1>
+                    <p>Estudiante / Desarrollador Web</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tabs de navegación -->
+    <nav class="profile-tabs">
+        <a href="#" class="tab active"><i class="fas fa-app"></i> App</a>
+        <a href="#" class="tab"><i class="fas fa-comment"></i> Messages</a>
+        <a href="#" class="tab"><i class="fas fa-cog"></i> Settings</a>
+    </nav>
+
+    <!-- Contenido principal: 3 columnas -->
+    <main class="dashboard-container">
+
+        <!-- Columna 1: Platform Settings -->
+        <section class="card">
+            <h2 class="title">Perfil</h2>
+            <div class="settings-group">
+                <h3>Información personal</h3>
+                <label><input type="checkbox"> Email me when someone follows me</label>
+                <label><input type="checkbox"> Email me when someone answers on my post</label>
+                <label><input type="checkbox" checked> Email me when someone mentions me</label>
+            </div>
+            <div class="settings-group">
+                <h3>Información de la cuenta</h3>
+                <label><input type="checkbox"> New launches and projects</label>
+                <label><input type="checkbox" checked> Monthly product updates</label>
+                <label><input type="checkbox"> Subscribe to newsletter</label>
+            </div>
+        </section>
+
+        <!-- Columna 2: Profile Information -->
+        <section class="card">
+            <h2>Información personal</h2>
+            <p class="profile-bio">
+                Hi, I'm Alec Thompson, Decisions: If you can't decide, the answer is no.
+                If two equally difficult paths, choose the one more painful in the short term
+                (pain avoidance is creating an illusion of equality).
+            </p>
+            <hr>
+            <div class="profile-details">
+                <p><strong>Nombre:</strong> Alec M. Thompson</p>
+                <p><strong>Teléfono:</strong> (+57) 312 1234 123</p>
+                <p><strong>Correo:</strong> alecthompson@elpoli.edu.co</p>
+                <p><strong>Ubicación:</strong> Colombia</p>
+                <p><strong>Redes Sociales:</strong>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </p>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Sección de proyectos -->
+    <section class="projects-section">
+        <h2>Emprendimientos</h2>
+        <p class="subtitle">Todos los emprendimientos</p>
+
+        <div class="projects-grid">
+
+            <!-- Proyecto 1 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400" alt="Modern">
+                <div class="project-info">
+                    <span class="project-tag">Emprendimiento #1</span>
+                    <h3>Modern</h3>
+                    <p>As Uber works through a huge amount of internal management turmoil.</p>
+                    <button class="btn-view">Ver emprendimiento</button>
+                    <div class="project-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400" alt="Scandinavian">
+                <div class="project-info">
+                    <span class="project-tag">Emprendimiento #2</span>
+                    <h3>Scandinavian</h3>
+                    <p>Music is something that everyone has their own specific opinion about.</p>
+                    <button class="btn-view">Ver emprendimiento</button>
+                    <div class="project-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 3 -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400" alt="Minimalist">
+                <div class="project-info">
+                    <span class="project-tag">Emprendimiento #3</span>
+                    <h3>Minimalist</h3>
+                    <p>Different people have different taste, and various types of music.</p>
+                    <button class="btn-view">Ver emprendimiento</button>
+                    <div class="project-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 4: New project (vacío) -->
+            <div class="project-card new-project">
+                <i class="fas fa-plus"></i>
+                <p>Nuevo emprendimiento</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <div class="block-links">
+                <a href="../../pages/Terms.html">Términos y condiciones</a>
+                <a href="../../pages/Privacy.html">Políticas de privacidad</a>
+                <a href="../../pages/aboutUs.html">Sobre nosotros</a>
+            </div>
+            <a href="../../index.html"><img src="../../images/PNG/poli_connect_horizontal_128px.png"
+                    alt="PoliConnect Logo" /></a>
+            <div class="block-links">
+                <a href="../../pages/Help.html">Ayuda</a>
+                <a href="../../pages/FAQ.html">Preguntas frecuentes</a>
+                <a href="../../pages/Contact.html">Contacto</a>
+            </div>
+        </div>
+        <hr class="horizontal dark" />
+        <div>
+            <div class="social-icons" id="creators-container">
+                <!-- JS llenará automáticamente las fotos de los creadores -->
+            </div>
+
+            <p id="footer-copyright">© 2025 <span style="font-weight: bold;">PoliConnet</span>. All rights reserved.</p>
+
+        </div>
+    </footer>
+    <script src="../../scripts/app.js"></script>
+</body>
+
+</html>

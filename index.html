@@ -1,34 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Boilerplate</title>
-    <link rel="stylesheet" href="styles/main.css">
-</head>
-<body>
 
-    <main>
-        <div class="demo-box" id="interactiveBox">
-            <h1>Hello Developer!</h1>
-            <p>Click anywhere in this box</p>
-        </div>
-    </main>
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <!-- Add responsive viewport meta tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Modern Boilerplate</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+    <nav class="nav">
+        <a class="nav-logo" href="../index.html">
+            <img src="../images/PNG/poli_connect_horizontal_128px.png" alt="PoliConnect Logo" />
+        </a>
+
+
+
+        <div class="nav-container">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/emprendedores.html">Emprendedores</a></li>
+                <li><a href="../pages/Contact.html">Contacto</a></li>
+                <li><a href="../pages/emprendimientos.html">Emprendimientos</a></li>
+                <li class="nav-btn"><a href="./pages/login.html" class="btn" id="btn-primary">Iniciar Sesion</a></li>
+                <li class="nav-btn"><a href="./pages/login.html#register" class="btn" id="btn-secondary">Registrarse</a>
+                </li>
+            </ul>
+            <button class="navbar-toggle" id="navbarToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <!-- Slide 1: Technology -->
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80"
+                        class="d-block w-100 carousel-img" alt="Tecnología e Innovación">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Tienda TechPro</h5>
+                        <p>Soluciones tecnológicas de calidad para tu negocio.</p>
+                    </div>
+                </div>
+                <!-- Slide 2: Fashion -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1920&q=80"
+                        class="d-block w-100 carousel-img" alt="Moda y Estilo">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>StyleHub</h5>
+                        <p>Tu tienda de moda en línea con ropa de alta calidad.</p>
+                    </div>
+                </div>
+                <!-- Slide 3: Gastronomy -->
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80"
+                        class="d-block w-100 carousel-img" alt="Gastronomía Gourmet">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>GourmetBox</h5>
+                        <p>Descubre la mejor gastronomía local e internacional.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+
+        </section>
+        <section class="container">
+            <h2 class="title" style="text-align: center; margin-bottom: 3rem;">Emprendedores Destacados</h2>
+            <div class="emprendimientos-grid">
+                <!-- Emprendedor Card 1 -->
+                <div class="emprendimiento-card">
+                    <div class="emprendimiento-image">🏠</div>
+                    <div class="emprendimiento-info">
+                        <span class="emprendimiento-categoria">HOGAR</span>
+                        <h3>María García</h3>
+                        <p>Innovadora en productos ecológicos para el hogar.</p>
+                    </div>
+                    <div class="emprendimiento-footer">
+                        <a href="javascript:void(0)" class="btn-ver-tienda">Ver Perfil</a>
+                        <button class="btn-contactar">Contactar</button>
+                    </div>
+                </div>
+                <!-- Emprendedor Card 2 -->
+                <div class="emprendimiento-card">
+                    <div class="emprendimiento-image">💻</div>
+                    <div class="emprendimiento-info">
+                        <span class="emprendimiento-categoria">TECNOLOGÍA</span>
+                        <h3>Juan Pérez</h3>
+                        <p>Desarrollador de software educativo para niños.</p>
+                    </div>
+                    <div class="emprendimiento-footer">
+                        <a href="./pages/pages privates/profile.html" class="btn-ver-tienda">Ver Perfil</a>
+                        <button class="btn-contactar">Contactar</button>
+                    </div>
+                </div>
+                <!-- Emprendedor Card 3 -->
+                <div class="emprendimiento-card">
+                    <div class="emprendimiento-image">👗</div>
+                    <div class="emprendimiento-info">
+                        <span class="emprendimiento-categoria">MODA</span>
+                        <h3>Ana López</h3>
+                        <p>Diseñadora de moda sostenible con materiales reciclados.</p>
+                    </div>
+                    <div class="emprendimiento-footer">
+                        <a href="javascript:void(0)" class="btn-ver-tienda">Ver Perfil</a>
+                        <button class="btn-contactar">Contactar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="card-profile reverse">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=400" alt="Gati Pet">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Gati Pets</h3>
+                    <p class="card-description">
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                        Neque porro quisquam est, qui dolorem.
+                    </p>
+                    <div class="card-footer">
+                        <div class="social-icons">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                        <button class="btn-contact">Contactar</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section>
+            <div class="card-profile">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400" alt="Pixas pix">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Pixas pix</h3>
+                    <p class="card-description">
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                        Neque porro quisquam est, qui dolorem.
+                    </p>
+                    <div class="card-footer">
+                        <div class="social-icons">
+                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                        <button class="btn-contact">Contactar</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
     <!-- ... existing body content ... -->
     <footer>
-        <p>© 2023 Your Company. All rights reserved.</p>
+
+        <div class="footer-links">
+            <div class="block-links">
+                <a href="pages/Terms.html">Términos y condiciones</a>
+                <a href="pages/Privacy.html">Políticas de privacidad</a>
+                <a href="pages/aboutUs.html">Sobre nosotros</a>
+            </div>
+            <a href="index.html"><img src="images/PNG/poli_connect_horizontal_128px.png"
+                    alt="Stay connected for more exciting updates!" /></a>
+            <div class="block-links">
+                <a href="pages/Help.html">Ayuda</a>
+                <a href="pages/FAQ.html">Preguntas frecuentes</a>
+                <a href="pages/Contact.html">Contacto</a>
+            </div>
+        </div>
+        <hr class="horizontal dark" />
+        <div>
+            <div class="social-icons" id="creators-container">
+                <!-- JS llenará automáticamente las fotos de los creadores desde teamData.json -->
+            </div>
+
+            <p id="footer-copyright">© 2025 <span style="font-weight: bold;">PoliConnet</span>. All rights reserved.</p>
+
+        </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/app.js"></script>
 </body>
+
 </html>

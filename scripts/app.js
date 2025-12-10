@@ -1,32 +1,35 @@
 // DOM Content Loaded Event
+let emprendimientos = []; // Global state for data
 document.addEventListener('DOMContentLoaded', initApp);
 
 function initApp() {
-    const demoBox = document.getElementById('interactiveBox');
-    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f1c40f'];
-    let colorIndex = 0;
     const wrapper = document.querySelector('.wrapper');
     const registerLink = document.querySelector('.register-link');
     const loginLink = document.querySelector('.login-link');
+    const navbarToggle = document.getElementById('navbarToggle');
+    const navLinks = document.getElementById('navLinks');
 
-    // Interactive demo functionality 
-    if (demoBox && colors.length > 0) {
-        demoBox.addEventListener('click', () => {
-            // Change background color
-            colorIndex = (colorIndex + 1) % colors.length;
-            demoBox.style.background = colors[colorIndex];
+    // Si el hash es #register, mostrar el formulario de registro
+    if (window.location.hash === '#register' && wrapper) {
+        wrapper.classList.add('active');
+    }
+    // Toggle Mobile Menu
+    if (navbarToggle && navLinks) {
+        navbarToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navbarToggle.classList.toggle('active');
+        });
 
-            // Update text
-            demoBox.querySelector('p').textContent = `Color Changed ${colorIndex + 1}/4!`;
-
-            // Add animation effect
-            demoBox.animate(
-                [{ transform: 'scale(1.05)' }, { transform: 'scale(1)' }],
-                { duration: 300, easing: 'ease-out' }
-            );
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                navbarToggle.classList.remove('active');
+            });
         });
     }
 
+    // ANIMATION FOR LOGIN AND REGISTER
     if (registerLink && wrapper) {
         registerLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -207,34 +210,205 @@ function initApp() {
             });
         })
         .catch(error => console.error('Error loading team data:', error));
- 
-    
 
 
-    // FAQ Accordion - Alternative Implementation
-    document.querySelectorAll('.faq-question').forEach(question => {
-        question.addEventListener('click', () => {
+
+
+
+
+    // FAQ Accordion  LOADING DATA FROM JSON
+    fetch('../data/FAQ.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('faq-container');
+            if (!container) return;
+
+
+            data.forEach(item => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item';
+                faqItem.innerHTML = `
+                    <div class="faq-question">
+                        <i class='bx bx-question-mark'></i>
+                        <h3>${item.question}</h3>
+                        <i class='bx bx-chevron-down toggle-icon'></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>${item.answer}</p>
+                    </div>
+                `;
+                container.appendChild(faqItem);
+            });
+        })
+        .catch(error => console.error('Error loading FAQ data:', error));
+
+
+
+    // FAQ Accordion - Event Delegation Implementation
+    const faqContainer = document.getElementById('faq-container');
+    if (faqContainer) {
+        faqContainer.addEventListener('click', (e) => {
+            const question = e.target.closest('.faq-question');
+            if (!question) return;
+
             const item = question.parentElement;
-            const answer = item.querySelector('.faq-answer');
             const icon = item.querySelector('.toggle-icon');
 
             // Toggle this item
             item.classList.toggle('active');
 
             // Toggle icon
-            icon.style.transform = item.classList.contains('active')
-                ? 'rotate(180deg)'
-                : 'rotate(0deg)';
+            if (icon) {
+                icon.style.transform = item.classList.contains('active')
+                    ? 'rotate(180deg)'
+                    : 'rotate(0deg)';
+            }
 
             // Close others
             document.querySelectorAll('.faq-item').forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.classList.remove('active');
-                    otherItem.querySelector('.toggle-icon').style.transform = 'rotate(0deg)';
+                    const otherIcon = otherItem.querySelector('.toggle-icon');
+                    if (otherIcon) {
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
                 }
             });
         });
+    }
+
+
+    const path = window.location.pathname.toLowerCase();
+
+    // Seleccionar todos los links del footer
+    const aboutLink = document.querySelector('a[href="/pages/aboutUs.html"]');
+    const termsLink = document.querySelector('a[href="/pages/Terms.html"]');
+    const privacyLink = document.querySelector('a[href="/pages/Privacy.html"]');
+    const helpLink = document.querySelector('a[href="/pages/Help.html"]');
+    const faqLink = document.querySelector('a[href="/pages/FAQ.html"]');
+    const contactLink = document.querySelector('a[href="/pages/Contact.html"]');
+    const contactLink2 = document.querySelector('a[href="../pages/Contact.html"]');
+    const emprendedoresLink = document.querySelector('a[href="../pages/emprendedores.html"]');
+
+
+
+    // Switch con true para evaluar condiciones
+    switch (true) {
+        case path.includes('aboutus.html'):
+            aboutLink?.classList.add('active');
+            break;
+        case path.includes('terms.html'):
+            termsLink?.classList.add('active');
+            break;
+        case path.includes('privacy.html'):
+            privacyLink?.classList.add('active');
+            break;
+        case path.includes('help.html'):
+            helpLink?.classList.add('active');
+            break;
+        case path.includes('faq.html'):
+            faqLink?.classList.add('active');
+            break;
+        case path.includes('contact.html'):
+            contactLink?.classList.add('active');
+            contactLink2?.classList.add('active');
+            break;
+        case path.includes('emprendedores.html'):
+            emprendedoresLink?.classList.add('active');
+            break;
+        default:
+            // No hacer nada si no coincide ninguna página
+            break;
+    }
+
+
+
+
+    // Global state for filtering
+    let currentCategory = 'todos';
+
+    // Load emprendimientos data
+    fetch('../data/emprendimientosData.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            emprendimientos = data; // Store fetched data globally
+            renderEmprendimientos(emprendimientos); // Initial render of all emprendimientos
+        })
+        .catch(error => console.error('Error loading emprendimientos data:', error));
+
+    // Search Input Listener
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', () => applyFiltersAndSearch(currentCategory));
+    }
+
+    // Filter Buttons Listeners
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Update current category based on button text or ID
+            // Using textContent for simplicity as per HTML, mapping 'Todos' to 'all'
+            const categoryText = btn.textContent.trim();
+            currentCategory = categoryText === 'Todos' ? 'todos' : categoryText;
+
+            applyFiltersAndSearch(currentCategory);
+        });
     });
+
     // Console message
     console.log('Application initialized successfully!');
 }
+
+function renderEmprendimientos(dataToRender) {
+    const grid = document.getElementById('emprendimientosGrid');
+    if (!grid) return;
+
+    grid.innerHTML = ''; // Clear existing cards
+
+    if (dataToRender.length === 0) {
+        grid.innerHTML = '<p class="no-results">No se encontraron emprendimientos que coincidan con tu búsqueda.</p>';
+        return;
+    }
+
+    dataToRender.forEach(emprendimiento => {
+        const card = document.createElement('div');
+        card.className = 'emprendimiento-card';
+        card.innerHTML = `
+                <div class="emprendimiento-image">${emprendimiento.emoji}</div>
+                <div class="emprendimiento-info">
+                    <span class="emprendimiento-categoria">${emprendimiento.categoria}</span>
+                    <h3>${emprendimiento.nombre}</h3>
+                    <p>${emprendimiento.descripcion}</p>
+                </div>
+                <div class="emprendimiento-footer">
+                    <a href="${emprendimiento.id === 1 ? '/pages/business.html' : 'javascript:void(0)'}" class="btn-ver-tienda">Ver Tienda</a>
+                    <button class="btn-contactar" onclick="openContactModal(${emprendimiento.id})">Contactar</button>
+                </div>
+            `;
+        grid.appendChild(card);
+    });
+}
+
+// Function to apply filters and search
+function applyFiltersAndSearch(category) {
+    const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
+    const categoryFilter = category || 'todos';
+
+    let filteredData = emprendimientos.filter(emprendimiento => {
+        const matchesSearch = emprendimiento.nombre.toLowerCase().includes(searchTerm) ||
+            emprendimiento.descripcion.toLowerCase().includes(searchTerm) ||
+            emprendimiento.categoria.toLowerCase().includes(searchTerm);
+
+        const matchesCategory = categoryFilter === 'todos' || emprendimiento.categoria.toLowerCase() === categoryFilter.toLowerCase();
+
+        return matchesSearch && matchesCategory;
+    });
+
+    renderEmprendimientos(filteredData);
+}
+

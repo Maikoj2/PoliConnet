@@ -11,7 +11,7 @@
 
 <body>
     <main>
-        <div class="wrapper simple-page">
+        <div class=" simple-page">
             <h1 class="title">Centro de Ayuda</h1>
             <div class="content-box">
                 <h2><i class='bx bx-support'></i> Soporte Técnico</h2>
@@ -21,7 +21,7 @@
                     <li>Teléfono: +57 1 234 5678</li>
                     <li>Horario: Lunes a Viernes, 8:00am - 6:00pm</li>
                 </ul>
-                
+
                 <h2><i class='bx bx-video-recording'></i> Tutoriales</h2>
                 <div class="tutorials-grid">
                     <div class="tutorial-card">
@@ -45,10 +45,33 @@
     </main>
 
     <footer>
-        <!-- Same footer as login.html -->
-        <!-- ... rest of footer remains same ... -->
+
+        <div class="footer-links">
+            <div class="block-links">
+                <a href="/pages/Terms.html">Términos y condiciones</a>
+                <a href="/pages/Privacy.html">Políticas de privacidad</a>
+                <a href="/pages/About.html">Sobre nosotros</a>
+            </div>
+            <a href="/index.html"><img src="../images/PNG/poli_connect_horizontal_128px.png"
+                    alt="Stay connected for more exciting updates!" /></a>
+            <div class="block-links">
+                <a href="/pages/Help.html">Ayuda</a>
+                <a href="/pages/FAQ.html">Preguntas frecuentes</a>
+                <a href="/pages/Contact.html">Contacto</a>
+            </div>
+        </div>
+        <hr class="horizontal dark" />
+        <div>
+            <div class="social-icons" id="creators-container">
+                <!-- JS llenará automáticamente las fotos de los creadores desde teamData.json -->
+            </div>
+
+            <p id="footer-copyright">© 2025 <span style="font-weight: bold;">PoliConnet</span>. All rights reserved.</p>
+
+        </div>
     </footer>
 
     <script src="../scripts/app.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "nombre": "Tienda TechPro",
+    "categoria": "Tecnología",
+    "emoji": "🖥️",
+    "descripcion": "Soluciones tecnológicas de calidad para tu negocio. Ofrecemos los mejores productos electrónicos con garantía.",
+    "encargado": "Carlos Mendoza",
+    "telefono": "+1 (555) 123-4567",
+    "correo": "info@techpro.com"
+  },
+  {
+    "id": 2,
+    "nombre": "StyleHub",
+    "categoria": "Moda",
+    "emoji": "👗",
+    "descripcion": "Tu tienda de moda en línea con ropa de alta calidad. Tendencias actuales a precios accesibles para todos.",
+    "encargado": "María García",
+    "telefono": "+1 (555) 234-5678",
+    "correo": "contacto@stylehub.com"
+  },
+  {
+    "id": 3,
+    "nombre": "GourmetBox",
+    "categoria": "Gastronomía",
+    "emoji": "🍽️",
+    "descripcion": "Productos gourmet y delicatessen importados. Experimenta sabores del mundo con nuestras cajas especiales.",
+    "encargado": "Juan Rodríguez",
+    "telefono": "+1 (555) 345-6789",
+    "correo": "ventas@gourmetbox.com"
+  },
+  {
+    "id": 4,
+    "nombre": "FitLife",
+    "categoria": "Fitness",
+    "emoji": "💪",
+    "descripcion": "Equipamiento deportivo y suplementos nutricionales. Acompañamos tu viaje hacia un estilo de vida saludable.",
+    "encargado": "Laura Martínez",
+    "telefono": "+1 (555) 456-7890",
+    "correo": "info@fitlife.com"
+  },
+  {
+    "id": 5,
+    "nombre": "EcoHome",
+    "categoria": "Sostenibilidad",
+    "emoji": "🌿",
+    "descripcion": "Productos ecológicos y sustentables para tu hogar. Contribuye al cuidado del planeta con opciones responsables.",
+    "encargado": "Pedro González",
+    "telefono": "+1 (555) 567-8901",
+    "correo": "contacto@ecohome.com"
+  },
+  {
+    "id": 6,
+    "nombre": "CreativeStudio",
+    "categoria": "Diseño",
+    "emoji": "🎨",
+    "descripcion": "Servicios de diseño gráfico y branding. Transformamos tus ideas en identidades visuales impactantes.",
+    "encargado": "Sofia López",
+    "telefono": "+1 (555) 678-9012",
+    "correo": "studio@creativestudio.com"
+  },
+  {
+    "id": 7,
+    "nombre": "BookNook",
+    "categoria": "Educación",
+    "emoji": "📚",
+    "descripcion": "Librería digital con miles de títulos. Accede a literatura, académicos y recursos educativos en línea.",
+    "encargado": "Ana Morales",
+    "telefono": "+1 (555) 789-0123",
+    "correo": "info@booknook.com"
+  },
+  {
+    "id": 8,
+    "nombre": "TravelVibe",
+    "categoria": "Viajes",
+    "emoji": "✈️",
+    "descripcion": "Plataforma de viajes y experiencias. Descubre destinos increíbles con paquetes personalizados exclusivos.",
+    "encargado": "Andrea Gómez",
+    "telefono": "+1 (555) 890-1234",
+    "correo": "info@travelvibe.com"
+  }
+]

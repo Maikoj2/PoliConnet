@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprendedores - PoliConnect</title>
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <a class="nav-logo" href="../index.html">
+            <img src="../images/PNG/poli_connect_horizontal_128px.png" alt="PoliConnect Logo" />
+        </a>
+
+
+
+        <div class="nav-container">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../pages/emprendedores.html">Emprendedores</a></li>
+                <li><a href="../pages/Contact.html">Contacto</a></li>
+                <li><a href="../pages/emprendimientos.html">Emprendimientos</a></li>
+                <li class="nav-btn"><a href="../pages/login.html" class="btn" id="btn-primary">Iniciar Sesion</a></li>
+                <li class="nav-btn"><a href="../pages/login.html#register" class="btn"
+                        id="btn-secondary">Registrarse</a></li>
+            </ul>
+            <button class="navbar-toggle" id="navbarToggle">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="business-container">
+        <!-- Sección de descripción del negocio -->
+        <section class="business-header">
+            <div class="business-info">
+                <h1>Tienda TechPro</h1>
+                <p class="business-tagline">Soluciones tecnológicas de calidad para tu negocio</p>
+                <p class="business-description">
+                    En TechPro nos dedicamos a ofrecer los mejores productos tecnológicos del mercado.
+                    Con más de 10 años de experiencia, hemos ganado la confianza de nuestros clientes
+                    en toda la región. Nos enfocamos en brindar productos de alta calidad con excelente
+                    servicio al cliente y garantía de satisfacción.
+                </p>
+            </div>
+            <div class="business-image">
+                <div class="placeholder-image">
+                    <p>Imagen del negocio</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de productos -->
+        <section class="products-section">
+            <h2>Nuestros Productos</h2>
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/PNG/poli_connect_isotipo_256px.png" alt="Laptop Gaming Pro">
+                    </div>
+                    <div class="product-info">
+                        <h3>Laptop Gaming Pro</h3>
+                        <p class="product-description">Procesador i9, 32GB RAM, RTX 4080</p>
+                        <div class="product-footer">
+                            <span class="price">$2,499.00</span>
+                            <button class="btn-add-cart" onclick="openProductModal(this)">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/PNG/poli_connect_isotipo_256px.png" alt="Monitor 4K">
+                    </div>
+                    <div class="product-info">
+                        <h3>Monitor 4K Ultra</h3>
+                        <p class="product-description">27" 4K, 144Hz, HDR Premium</p>
+                        <div class="product-footer">
+                            <span class="price">$649.00</span>
+                            <button class="btn-add-cart" onclick="openProductModal(this)">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/PNG/poli_connect_isotipo_256px.png" alt="Teclado Mecánico">
+                    </div>
+                    <div class="product-info">
+                        <h3>Teclado Mecánico RGB</h3>
+                        <p class="product-description">Switches Cherry MX, Iluminación RGB</p>
+                        <div class="product-footer">
+                            <span class="price">$199.00</span>
+                            <button class="btn-add-cart" onclick="openProductModal(this)">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/PNG/poli_connect_isotipo_256px.png" alt="Mouse Gaming">
+                    </div>
+                    <div class="product-info">
+                        <h3>Mouse Gaming Pro</h3>
+                        <p class="product-description">20,000 DPI, Sensor óptico avanzado</p>
+                        <div class="product-footer">
+                            <span class="price">$89.99</span>
+                            <button class="btn-add-cart" onclick="openProductModal(this)">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/PNG/poli_connect_isotipo_256px.png" alt="Auriculares Inalámbricos">
+                    </div>
+                    <div class="product-info">
+                        <h3>Auriculares Inalámbricos</h3>
+                        <p class="product-description">Cancelación de ruido, 30h batería</p>
+                        <div class="product-footer">
+                            <span class="price">$299.00</span>
+                            <button class="btn-add-cart" onclick="openProductModal(this)">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/PNG/poli_connect_isotipo_256px.png" alt="Webcam 4K">
+                    </div>
+                    <div class="product-info">
+                        <h3>Webcam 4K Pro</h3>
+                        <p class="product-description">Resolución 4K, Autofoco automático</p>
+                        <div class="product-footer">
+                            <span class="price">$179.99</span>
+                            <button class="btn-add-cart" onclick="openProductModal(this)">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/PNG/poli_connect_isotipo_256px.png" alt="SSD 2TB">
+                    </div>
+                    <div class="product-info">
+                        <h3>SSD NVMe 2TB</h3>
+                        <p class="product-description">7,000 MB/s lectura, M.2 PCIe 4.0</p>
+                        <div class="product-footer">
+                            <span class="price">$249.99</span>
+                            <button class="btn-add-cart" onclick="openProductModal(this)">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="../images/PNG/poli_connect_isotipo_256px.png" alt="Fuente de Poder">
+                    </div>
+                    <div class="product-info">
+                        <h3>Fuente 1200W Gold</h3>
+                        <p class="product-description">Certificación 80+ Gold, Modular</p>
+                        <div class="product-footer">
+                            <span class="price">$189.99</span>
+                            <button class="btn-add-cart" onclick="openProductModal(this)">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de contacto del negocio -->
+        <section class="business-contact">
+            <h2>Contacta con nosotros</h2>
+            <div class="contacto-info">
+                <div class="contact-card">
+                    <h3>📍 Ubicación</h3>
+                    <p>Calle Principal 123, Ciudad, País</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📞 Teléfono</h3>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <p>info@techpro.com</p>
+                </div>
+                <div class="contact-card">
+                    <h3>⏰ Horario</h3>
+                    <p>Lun - Vie: 9:00 - 18:00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer>
+        <div class="footer-links">
+            <div class="block-links">
+                <a href="/pages/Terms.html">Términos y condiciones</a>
+                <a href="/pages/Privacy.html">Políticas de privacidad</a>
+                <a href="/pages/aboutUs.html">Sobre nosotros</a>
+            </div>
+            <a href="/index.html"><img src="../images/PNG/poli_connect_horizontal_128px.png"
+                    alt="Stay connected for more exciting updates!" /></a>
+            <div class="block-links">
+                <a href="/pages/Help.html">Ayuda</a>
+                <a href="/pages/FAQ.html">Preguntas frecuentes</a>
+                <a href="/pages/Contact.html">Contacto</a>
+            </div>
+        </div>
+        <hr class="horizontal dark" />
+        <div>
+            <div class="social-icons" id="creators-container">
+                <!-- JS llenará automáticamente las fotos de los creadores desde teamData.json -->
+            </div>
+
+            <p id="footer-copyright">© 2025 <span style="font-weight: bold;">PoliConnet</span>. All rights reserved.</p>
+
+        </div>
+    </footer>
+
+    <script src="../scripts/app.js"></script>
+</body>
+
+</html>

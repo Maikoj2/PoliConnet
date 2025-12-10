@@ -29,6 +29,12 @@
       "question": "¿Cuál es la política de devoluciones?",
       "answer": "Aceptamos devoluciones dentro de los 30 días posteriores a la compra. El producto debe estar en su estado original y con el empaque intacto. Los gastos de envío de devolución corren por cuenta del cliente.",
       "category": "Devoluciones"
+    },
+    {
+      "id": 6,
+      "question": "¿Cuál es la política de devoluciones?",
+      "answer": "Aceptamos devoluciones dentro de los 30 días posteriores a la compra. El producto debe estar en su estado original y con el empaque intacto. Los gastos de envío de devolución corren por cuenta del cliente.",
+      "category": "Devoluciones"
     }
   
   ]
